@@ -1,14 +1,25 @@
 package application.Model.Types;
 
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class PptData {
     private ArrayList<String> slideTxt;
     private ArrayList<String> commentTxt;
+    private ArrayList<BufferedImage> images;
 
-    public PptData(ArrayList<String> slideTxt, ArrayList<String> commentTxt) {
+    public PptData(ArrayList<String> slideTxt, ArrayList<String> commentTxt, ArrayList<BufferedImage> images) {
         this.slideTxt = slideTxt;
         this.commentTxt = commentTxt;
+        this.images = images;
+    }
+
+    public ArrayList<BufferedImage> getImages() {
+        return images;
+    }
+
+    public void setImages(ArrayList<BufferedImage> images) {
+        this.images = images;
     }
 
     public ArrayList<String> getSlideTxt() {

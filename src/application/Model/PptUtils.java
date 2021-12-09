@@ -83,7 +83,7 @@ public class PptUtils {
                 System.out.println(zEntry.getName());
             }
         }
-        PptData data = new PptData(slideTxt, commentTxt);
+        PptData data = new PptData(slideTxt, commentTxt,images);
         zFile.close();
         return data;
     }
