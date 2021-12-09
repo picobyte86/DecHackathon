@@ -11,6 +11,7 @@ import java.io.File;
 public class Controller {
     @FXML
     private Button btn;
+    public File file;
 
     @FXML
     void btnOnClick(ActionEvent event) {
@@ -20,7 +21,7 @@ public class Controller {
         Stage stage = new Stage();
         fileChooser.setTitle("Open File");
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-        File file = fileChooser.showOpenDialog(btn.getScene().getWindow());
+        file = fileChooser.showOpenDialog(btn.getScene().getWindow());
         if (file != null) {
 
         }
