@@ -2,15 +2,16 @@ package application.Model;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Enumeration;
+import java.util.*;
 import java.awt.image.BufferedImage;
 
+import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import application.Model.Types.PptData;
-import javafx.scene.image.Image;
+import libraries.rake.com.linguistic.rake.Rake;
+import libraries.rake.com.linguistic.rake.RakeLanguages;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -27,10 +28,10 @@ public class PptUtils {
         ZipFile zFile = new ZipFile(file);
         Enumeration<? extends ZipEntry> entries = zFile.entries();
         File contentType = new File("data/ppt/sample1/[Content_Types].xml");
-        OutputStream zOutStream;
         ArrayList<String> slideTxt = new ArrayList<String>();
         ArrayList<String> commentTxt = new ArrayList<String>();
         ArrayList<BufferedImage> images = new ArrayList<BufferedImage>();
+        Rake zRake = new Rake(RakeLanguages.ENGLISH);
         int slideCount = 0;
         int commentCount = 0;
         while (entries.hasMoreElements()) {
@@ -46,12 +47,12 @@ public class PptUtils {
                     System.out.println("&&&&&&" + ext);
                     BufferedImage zImage = getImage(zFile, zEntry);
                     images.add(zImage);
-                    ImageIO.write(zImage, ext, new File("data/ppt/sample1/ppt/media/new" + zPath[2]));
+                    //ImageIO.write(zImage, ext, new File("data/ppt/sample1/ppt/media/new" + zPath[2]));
                 }
             } else if (zPath[0].equals("ppt") && zPath[1].equals("slides")) {
                 if (!zPath[2].equals("_rels")) {
                     slideCount += 1;
-                    slideTxt.add("Slide " + slideCount);
+                    //slideTxt.add("Slide " + slideCount);
                     zDoc = getDocument(zFile, zEntry);
                     root = zDoc.getDocumentElement();
                     NodeList a_t = root.getElementsByTagName("a:t");
@@ -62,7 +63,7 @@ public class PptUtils {
             } else if (zPath[0].equals("ppt") && zPath[1].equals("notesSlides")) {
                 if (!zPath[2].equals("_rels")) {
                     commentCount += 1;
-                    commentTxt.add("Slide " + commentCount);
+                    //commentTxt.add("Slide " + commentCount);
                     zDoc = getDocument(zFile, zEntry);
                     root = zDoc.getDocumentElement();
                     NodeList a_t = root.getElementsByTagName("a:t");
@@ -83,7 +84,25 @@ public class PptUtils {
                 System.out.println(zEntry.getName());
             }
         }
-        PptData data = new PptData(slideTxt, commentTxt,images);
+        ArrayList<String> CslideTxt = cleanText(String.join(" ", slideTxt));
+        ArrayList<String> CcommentTxt = cleanText(String.join(" ", commentTxt));
+        System.out.println(CslideTxt);
+        System.out.println(CcommentTxt);
+        LinkedHashMap<String, Double> KslideTxt = zRake.getKeywordsFromText(String.join(" ", CslideTxt));
+        LinkedHashMap<String, Double> KcommentTxt = zRake.getKeywordsFromText(String.join(" ", CcommentTxt));
+        ArrayList<ArrayList<String>> retSlideTxt = new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<String>> retCommentTxt = new ArrayList<ArrayList<String>>();
+        KslideTxt.forEach((txt,i)->{
+            ArrayList<String> temp = new ArrayList<String>();
+            Collections.addAll(temp,txt.split("\\s+"));
+            retSlideTxt.add(temp);
+        });
+        KcommentTxt.forEach((txt,i)->{
+            ArrayList<String> temp = new ArrayList<String>();
+            Collections.addAll(temp,txt.split("\\s+"));
+            retCommentTxt.add(temp);
+        });
+        PptData data = new PptData(retSlideTxt, retCommentTxt, images);
         zFile.close();
         return data;
     }
@@ -107,5 +126,26 @@ public class PptUtils {
         BufferedImage zImage = ImageIO.read(zInputStream);
         zStream.close();
         return zImage;
+    }
+    private static ArrayList<String> cleanText(String text) {
+        //[^abcdeABCDE1234567890-]
+        String[] retArray = text.split("[^\\w-]");
+        ArrayList<String> ret = new ArrayList<String>();
+        Collections.addAll(ret,retArray);
+        ArrayList<String> Cret = new ArrayList<String>();
+        for (int i=0;i< ret.size();i++) {
+            if (!(ret.get(i).equals("") || ret.get(i)==null || isNumeric(ret.get(i)))) {
+                Cret.add(ret.get(i));
+            }
+        }
+        return Cret;
+    }
+    private static boolean isNumeric(CharSequence sequence) {
+        for (int i=0;i<sequence.length();i++) {
+            if (!Character.isDigit(sequence.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 }

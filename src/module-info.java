@@ -7,5 +7,6 @@ module DecHackathon {
     requires java.desktop;
     opens application.Controller;
     opens application.View;
+    opens application.Model;
     opens application;
 }
