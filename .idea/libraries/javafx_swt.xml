@@ -1,7 +1,6 @@
 <component name="libraryTable">
   <library name="javafx-swt">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../jsoup-1.14.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../openjfx-16_windows-x64_bin-sdk/javafx-sdk-16/lib/javafx-swt.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../openjfx-16_windows-x64_bin-sdk/javafx-sdk-16/lib/javafx.base.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../openjfx-16_windows-x64_bin-sdk/javafx-sdk-16/lib/javafx.controls.jar!/" />
@@ -10,6 +9,8 @@
       <root url="jar://$PROJECT_DIR$/../../../../openjfx-16_windows-x64_bin-sdk/javafx-sdk-16/lib/javafx.media.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../openjfx-16_windows-x64_bin-sdk/javafx-sdk-16/lib/javafx.swing.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../openjfx-16_windows-x64_bin-sdk/javafx-sdk-16/lib/javafx.web.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libraries/jsoup-1.14.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libraries/pdfbox-app-3.0.0-alpha2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

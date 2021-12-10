@@ -38,7 +38,6 @@ public class PptUtils {
     public static PptData decode(File file) throws IOException, ParserConfigurationException, SAXException {
         ZipFile zFile = new ZipFile(file);
         Enumeration<? extends ZipEntry> entries = zFile.entries();
-        File contentType = new File("data/ppt/sample1/[Content_Types].xml");
         ArrayList<String> slideTxt = new ArrayList<String>();
         ArrayList<String> commentTxt = new ArrayList<String>();
         ArrayList<BufferedImage> images = new ArrayList<BufferedImage>();
@@ -132,15 +131,11 @@ public class PptUtils {
         ArrayList<Result> ret = new ArrayList<Result>();
         HttpClient client = HttpClient.newBuilder()
                 .build();
-        ArrayList<TextGroup> slideTxt = data.getSlideTxt();
+        ArrayList<String> slideTxt = data.getSlideTxt();
+
         for (int i = 0; i < slideTxt.size(); i++) {
-            System.out.println(slideTxt.get(i).getWords());
-            System.out.println(i);
-            for (int j = 0; j < slideTxt.get(i).getWords().size(); j++) {
-                Result r = new Result(slideTxt.get(i).getWords().get(j),
-                        searchEntry(slideTxt.get(i).getWords().get(j), client));
-                ret.add(r);
-            }
+            Result r = new Result(slideTxt.get(i), searchEntry(slideTxt.get(i), client));
+            ret.add(r);
         }
         return ret;
     }
@@ -149,13 +144,10 @@ public class PptUtils {
         ArrayList<Result> ret = new ArrayList<Result>();
         HttpClient client = HttpClient.newBuilder()
                 .build();
-        ArrayList<TextGroup> commentTxt = data.getCommentTxt();
+        ArrayList<String> commentTxt = data.getCommentTxt();
         for (int i = 0; i < commentTxt.size(); i++) {
-            for (int j = 0; j < commentTxt.get(i).getWords().size(); j++) {
-                Result r = new Result(commentTxt.get(i).getWords().get(j),
-                        searchEntry(commentTxt.get(i).getWords().get(j), client));
-                ret.add(r);
-            }
+            Result r = new Result(commentTxt.get(i), searchEntry(commentTxt.get(i), client));
+            ret.add(r);
         }
         return ret;
     }
@@ -172,12 +164,11 @@ public class PptUtils {
                 client.send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println(response.statusCode());
         System.out.println(response.body());
-        System.out.println(request.uri());
         org.jsoup.nodes.Document webPage = Jsoup.parse(response.body());
         Elements sources = webPage.getElementsByClass("gs_r gs_or gs_scl");
         ArrayList<OnlineResource> ret = new ArrayList<OnlineResource>();
         int sourceSize = sources.size();
-        if (sources.size()>5) {
+        if (sources.size() > 5) {
             sourceSize = 5;
         }
         for (int i = 0; i < sourceSize; i++) {
@@ -199,7 +190,7 @@ public class PptUtils {
                 );
                 ret.add(r);
             } catch (IndexOutOfBoundsException e) {
-                OnlineResource r = new OnlineResource("Not Found","","");
+                OnlineResource r = new OnlineResource("Not Found", "", "");
                 ret.add(r);
             }
         }

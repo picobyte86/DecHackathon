@@ -22,15 +22,31 @@ public class PptData {
         this.images = images;
     }
 
-    public ArrayList<TextGroup> getSlideTxt() {
+    public ArrayList<TextGroup> getSlideTxtGroup() {
         return slideTxt;
+    }
+
+    public ArrayList<String> getSlideTxt() {
+        ArrayList<String> ret = new ArrayList<String>();
+        for (int i = 0; i < slideTxt.size(); i++) {
+            ret.addAll(slideTxt.get(i).getWords());
+        }
+        return ret;
     }
 
     public void setSlideTxt(ArrayList<TextGroup> slideTxt) {
         this.slideTxt = slideTxt;
     }
 
-    public ArrayList<TextGroup> getCommentTxt() {
+    public ArrayList<String> getCommentTxt() {
+        ArrayList<String> ret = new ArrayList<String>();
+        for (int i = 0; i < commentTxt.size(); i++) {
+            ret.addAll(commentTxt.get(i).getWords());
+        }
+        return ret;
+    }
+
+    public ArrayList<TextGroup> getCommentTxtGroup() {
         return commentTxt;
     }
 

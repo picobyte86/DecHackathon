@@ -16,15 +16,15 @@ import java.util.ArrayList;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         FXMLLoader stageLoader = new FXMLLoader(getClass().getResource("View/splashscreen.fxml"));
         PptData data = PptUtils.decode(new File("data/ppt/sample1.pptx"));
-        ArrayList<TextGroup> slideTxt = data.getSlideTxt();
-        ArrayList<TextGroup> commentTxt = data.getCommentTxt();
-        //System.out.println(slideTxt.toString());
-        //System.out.println(commentTxt.toString());
-        //ArrayList<Result> results = PptUtils.searchSlides(data);
-        //System.out.println(results.toString());
+        ArrayList<String> slideTxt = data.getSlideTxt();
+        ArrayList<String> commentTxt = data.getCommentTxt();
+        // System.out.println(slideTxt.toString());
+        // System.out.println(commentTxt.toString());
+        ArrayList<Result> results = PptUtils.searchSlides(data);
+        // System.out.println(results.toString());
         Parent root = stageLoader.load();
         primaryStage.setTitle("Hackathon Submission");
         primaryStage.setScene(new Scene(root, 600, 400));
