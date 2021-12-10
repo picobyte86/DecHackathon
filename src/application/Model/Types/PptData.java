@@ -2,7 +2,9 @@ package application.Model.Types;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-
+/*
+* Wrapper for processed powerpoint data
+ */
 public class PptData {
     private ArrayList<TextGroup> slideTxt;
     private ArrayList<TextGroup> commentTxt;

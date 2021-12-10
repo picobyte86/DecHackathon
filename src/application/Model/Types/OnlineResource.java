@@ -1,5 +1,7 @@
 package application.Model.Types;
-
+/*
+* Represents result from web search
+ */
 public class OnlineResource {
     private String hyperlink;
     private String title;

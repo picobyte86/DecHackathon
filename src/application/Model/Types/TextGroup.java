@@ -1,7 +1,10 @@
 package application.Model.Types;
 
 import java.util.ArrayList;
-
+/*
+* Wrapper for returned word+value pair from rake algorithm
+* because dealing with hashmap is annoying
+ */
 public class TextGroup {
     private ArrayList<String> words;
     private double weight;

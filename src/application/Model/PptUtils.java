@@ -1,18 +1,14 @@
 package application.Model;
 
 import java.io.*;
-import java.net.InetSocketAddress;
-import java.net.ProxySelector;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.awt.image.BufferedImage;
 
 
-import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -30,11 +26,13 @@ import org.xml.sax.SAXException;
 import javax.imageio.ImageIO;
 import javax.xml.parsers.*;
 
+import static application.Model.Utils.cleanText;
+
 public class PptUtils {
     public PptUtils() {
 
     }
-
+    // Extracts Text and Images from PPT, text processed using rake
     public static PptData decode(File file) throws IOException, ParserConfigurationException, SAXException {
         ZipFile zFile = new ZipFile(file);
         Enumeration<? extends ZipEntry> entries = zFile.entries();
@@ -57,7 +55,6 @@ public class PptUtils {
                     System.out.println("&&&&&&" + ext);
                     BufferedImage zImage = getImage(zFile, zEntry);
                     images.add(zImage);
-                    //ImageIO.write(zImage, ext, new File("data/ppt/sample1/ppt/media/new" + zPath[2]));
                 }
             } else if (zPath[0].equals("ppt") && zPath[1].equals("slides")) {
                 if (!zPath[2].equals("_rels")) {
@@ -120,6 +117,7 @@ public class PptUtils {
         return data;
     }
 
+    // Searches internet for keywords from powerpoint
     public static ArrayList<Result> search(PptData data) throws IOException, InterruptedException {
         ArrayList<Result> ret = new ArrayList<Result>();
         ret.addAll(searchSlides(data));
@@ -127,12 +125,12 @@ public class PptUtils {
         return ret;
     }
 
+    // Searches internet for keywords from powerpoint slide text
     public static ArrayList<Result> searchSlides(PptData data) throws IOException, InterruptedException {
         ArrayList<Result> ret = new ArrayList<Result>();
         HttpClient client = HttpClient.newBuilder()
                 .build();
         ArrayList<String> slideTxt = data.getSlideTxt();
-
         for (int i = 0; i < slideTxt.size(); i++) {
             Result r = new Result(slideTxt.get(i), searchEntry(slideTxt.get(i), client));
             ret.add(r);
@@ -140,6 +138,7 @@ public class PptUtils {
         return ret;
     }
 
+    // Searches internet for keywords from powerpoint comments
     public static ArrayList<Result> searchComments(PptData data) throws IOException, InterruptedException {
         ArrayList<Result> ret = new ArrayList<Result>();
         HttpClient client = HttpClient.newBuilder()
@@ -152,18 +151,16 @@ public class PptUtils {
         return ret;
     }
 
+    // Does internet search for keyword by scraping google scholar
     public static ArrayList<OnlineResource> searchEntry(String keyword, HttpClient client) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://scholar.google.com/scholar?q=" + keyword))
                 .header("Content-Type", "text/html; charset=UTF-8")
-                //.header("X-Requested-With","XMLHttpRequest")
                 .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36")
                 .GET()
                 .build();
         HttpResponse<String> response =
                 client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.statusCode());
-        System.out.println(response.body());
         org.jsoup.nodes.Document webPage = Jsoup.parse(response.body());
         Elements sources = webPage.getElementsByClass("gs_r gs_or gs_scl");
         ArrayList<OnlineResource> ret = new ArrayList<OnlineResource>();
@@ -194,10 +191,10 @@ public class PptUtils {
                 ret.add(r);
             }
         }
-        System.out.println(ret);
         return ret;
     }
 
+    // helper method for getting xml file from archive
     private static Document getDocument(ZipFile file, ZipEntry entry) throws IOException, ParserConfigurationException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -209,6 +206,7 @@ public class PptUtils {
         return builder.parse(zInputStream);
     }
 
+    // above but image file
     private static BufferedImage getImage(ZipFile file, ZipEntry entry) throws IOException {
         InputStream zStream;
         zStream = file.getInputStream(entry);
@@ -217,28 +215,5 @@ public class PptUtils {
         BufferedImage zImage = ImageIO.read(zInputStream);
         zStream.close();
         return zImage;
-    }
-
-    private static ArrayList<String> cleanText(String text) {
-        //[^abcdeABCDE1234567890-]
-        String[] retArray = text.split("[^\\w-]");
-        ArrayList<String> ret = new ArrayList<String>();
-        Collections.addAll(ret, retArray);
-        ArrayList<String> Cret = new ArrayList<String>();
-        for (int i = 0; i < ret.size(); i++) {
-            if (!(ret.get(i).equals("") || ret.get(i) == null || isNumeric(ret.get(i)))) {
-                Cret.add(ret.get(i));
-            }
-        }
-        return Cret;
-    }
-
-    private static boolean isNumeric(CharSequence sequence) {
-        for (int i = 0; i < sequence.length(); i++) {
-            if (!Character.isDigit(sequence.charAt(i))) {
-                return false;
-            }
-        }
-        return true;
     }
 }

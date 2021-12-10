@@ -1,7 +1,9 @@
 package application.Model.Types;
 
 import java.util.ArrayList;
-
+/*
+* wrapper for results of respective keyword when searched
+ */
 public class Result {
     private String keyword;
     private ArrayList<OnlineResource> results;
