@@ -5,6 +5,8 @@ module DecHackathon {
     requires javafx.media;
     requires java.xml;
     requires java.desktop;
+    requires java.net.http;
+    requires org.jsoup;
     opens application.Controller;
     opens application.View;
     opens application.Model;
