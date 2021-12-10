@@ -45,7 +45,4 @@ public class RakeLanguages {
     public static String TURKISH = "tr";
     public static String UKRAINIAN = "uk";
     public static String URDU = "ur";
-
-    public RakeLanguages() {
-    }
 }

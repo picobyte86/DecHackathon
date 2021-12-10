@@ -10,6 +10,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import application.Model.Types.PptData;
+import application.Model.Types.TextGroup;
 import libraries.rake.com.linguistic.rake.Rake;
 import libraries.rake.com.linguistic.rake.RakeLanguages;
 import org.w3c.dom.*;
@@ -90,17 +91,20 @@ public class PptUtils {
         System.out.println(CcommentTxt);
         LinkedHashMap<String, Double> KslideTxt = zRake.getKeywordsFromText(String.join(" ", CslideTxt));
         LinkedHashMap<String, Double> KcommentTxt = zRake.getKeywordsFromText(String.join(" ", CcommentTxt));
-        ArrayList<ArrayList<String>> retSlideTxt = new ArrayList<ArrayList<String>>();
-        ArrayList<ArrayList<String>> retCommentTxt = new ArrayList<ArrayList<String>>();
+        ArrayList<TextGroup> retSlideTxt = new ArrayList<TextGroup>();
+
+        ArrayList<TextGroup> retCommentTxt = new ArrayList<TextGroup>();
         KslideTxt.forEach((txt,i)->{
             ArrayList<String> temp = new ArrayList<String>();
             Collections.addAll(temp,txt.split("\\s+"));
-            retSlideTxt.add(temp);
+            TextGroup group = new TextGroup(temp,i);
+            retSlideTxt.add(group);
         });
         KcommentTxt.forEach((txt,i)->{
             ArrayList<String> temp = new ArrayList<String>();
             Collections.addAll(temp,txt.split("\\s+"));
-            retCommentTxt.add(temp);
+            TextGroup group = new TextGroup(temp,i);
+            retCommentTxt.add(group);
         });
         PptData data = new PptData(retSlideTxt, retCommentTxt, images);
         zFile.close();

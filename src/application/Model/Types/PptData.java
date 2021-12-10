@@ -4,11 +4,11 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class PptData {
-    private ArrayList<String> slideTxt;
-    private ArrayList<String> commentTxt;
+    private ArrayList<TextGroup> slideTxt;
+    private ArrayList<TextGroup> commentTxt;
     private ArrayList<BufferedImage> images;
 
-    public PptData(ArrayList<String> slideTxt, ArrayList<String> commentTxt, ArrayList<BufferedImage> images) {
+    public PptData(ArrayList<TextGroup> slideTxt, ArrayList<TextGroup> commentTxt, ArrayList<BufferedImage> images) {
         this.slideTxt = slideTxt;
         this.commentTxt = commentTxt;
         this.images = images;
@@ -22,19 +22,19 @@ public class PptData {
         this.images = images;
     }
 
-    public ArrayList<String> getSlideTxt() {
+    public ArrayList<TextGroup> getSlideTxt() {
         return slideTxt;
     }
 
-    public void setSlideTxt(ArrayList<String> slideTxt) {
+    public void setSlideTxt(ArrayList<TextGroup> slideTxt) {
         this.slideTxt = slideTxt;
     }
 
-    public ArrayList<String> getCommentTxt() {
+    public ArrayList<TextGroup> getCommentTxt() {
         return commentTxt;
     }
 
-    public void setCommentTxt(ArrayList<String> commentTxt) {
+    public void setCommentTxt(ArrayList<TextGroup> commentTxt) {
         this.commentTxt = commentTxt;
     }
 
