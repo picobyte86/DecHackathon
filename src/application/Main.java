@@ -2,6 +2,7 @@ package application;
 
 import application.Model.PptUtils;
 import application.Model.Types.PptData;
+import application.Model.Types.Result;
 import application.Model.Types.TextGroup;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,8 +21,10 @@ public class Main extends Application {
         PptData data = PptUtils.decode(new File("data/ppt/sample1.pptx"));
         ArrayList<TextGroup> slideTxt = data.getSlideTxt();
         ArrayList<TextGroup> commentTxt = data.getCommentTxt();
-        System.out.println(slideTxt.toString());
-        System.out.println(commentTxt.toString());
+        //System.out.println(slideTxt.toString());
+        //System.out.println(commentTxt.toString());
+        //ArrayList<Result> results = PptUtils.searchSlides(data);
+        //System.out.println(results.toString());
         Parent root = stageLoader.load();
         primaryStage.setTitle("Hackathon Submission");
         primaryStage.setScene(new Scene(root, 600, 400));
