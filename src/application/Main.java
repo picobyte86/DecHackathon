@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 
 public class Main extends Application {
-    //Change this to wtv you like most of this is testing :)
+    // Change this to wtv you like most of this is testing :)
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader stageLoader = new FXMLLoader(getClass().getResource("View/splashscreen.fxml"));
