@@ -17,7 +17,9 @@ public class VttData {
         this.recognizability = recognizability;
         this.language = language;
     }
-
+    public int getSize() {
+        return entries.size();
+    }
     public Date getDuration() {
         return duration;
     }
