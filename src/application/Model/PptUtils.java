@@ -29,11 +29,13 @@ import javax.xml.parsers.*;
 import static application.Model.Utils.cleanText;
 
 public class PptUtils {
+    public static long time;
     public PptUtils() {
 
     }
     // Extracts Text and Images from PPT, text processed using rake
     public static PptData decode(File file) throws IOException, ParserConfigurationException, SAXException {
+        long start = System.currentTimeMillis();
         ZipFile zFile = new ZipFile(file);
         Enumeration<? extends ZipEntry> entries = zFile.entries();
         ArrayList<String> slideTxt = new ArrayList<String>();
@@ -114,6 +116,8 @@ public class PptUtils {
         });
         PptData data = new PptData(retSlideTxt, retCommentTxt, images);
         zFile.close();
+        long end = System.currentTimeMillis();
+        time = end - start;
         return data;
     }
 

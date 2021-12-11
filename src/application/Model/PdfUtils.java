@@ -18,8 +18,10 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 
 public class PdfUtils {
+    public static long time;
     // Extracts Text and Images from PDF, text processed using rake
     public static PdfData decode(File file) throws IOException {
+        long start = System.currentTimeMillis();
         Rake rake = new Rake(RakeLanguages.ENGLISH);
         PDFTextStripper pdfStripper = new PDFTextStripper();
         ArrayList<TextGroup> retText = new ArrayList<TextGroup>();
@@ -50,6 +52,8 @@ public class PdfUtils {
         doc.close();
 
         PdfData ret = new PdfData(retText, retImages);
+        long end = System.currentTimeMillis();
+        time = end - start;
         return ret;
     }
 }

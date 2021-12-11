@@ -16,9 +16,9 @@ import java.io.IOException;
 public class Controller {
     @FXML
     private Button btn;
-    public File file;
-    public boolean pdf = false;
-    public boolean ppt = false;
+    public static File file;
+    public static boolean pdf = false;
+    public static boolean ppt = false;
 
     @FXML
     void btnOnClick(ActionEvent event) throws IOException {
