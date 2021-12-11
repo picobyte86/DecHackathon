@@ -42,7 +42,7 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Stage stage = (Stage) backBtn.getScene().getWindow();
-        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setResizable(false);
         if (Controller.pdf) {
             try {
                 PdfData pdf = PdfUtils.decode(Controller.file);
