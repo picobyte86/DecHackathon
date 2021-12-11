@@ -1,6 +1,10 @@
 package application.Controller;
 
 import application.Main;
+import application.Model.PdfUtils;
+import application.Model.PptUtils;
+import application.Model.Types.PdfData;
+import application.Model.Types.PptData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +14,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,6 +41,23 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Stage stage = (Stage) backBtn.getScene().getWindow();
+        stage.setResizable(false);
+        if (Controller.pdf) {
+            try {
+                PdfData pdf = PdfUtils.decode(Controller.file);
+                ta1.setText("");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (Controller.ppt) {
+            try {
+                PptData ppt = PptUtils.decode(Controller.file);
+            } catch (IOException | SAXException | ParserConfigurationException e) {
+                e.printStackTrace();
+            }
+        }else {
 
+        }
     }
 }

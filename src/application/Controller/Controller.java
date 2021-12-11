@@ -4,6 +4,7 @@ import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,13 +13,15 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Controller {
+public class Controller implements Initializable {
     @FXML
     private Button btn;
-    public File file;
-    public boolean pdf = false;
-    public boolean ppt = false;
+    public static File file;
+    public static boolean pdf = false;
+    public static boolean ppt = false;
 
     @FXML
     void btnOnClick(ActionEvent event) throws IOException {
@@ -38,5 +41,12 @@ public class Controller {
             Stage stage = (Stage) btn.getScene().getWindow();
             stage.setScene(new Scene(root));
         }
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Stage stage = (Stage) btn.getScene().getWindow();
+        stage.setResizable(false);
     }
 }
