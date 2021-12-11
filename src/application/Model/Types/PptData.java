@@ -2,10 +2,13 @@ package application.Model.Types;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+
 /*
-* Wrapper for processed powerpoint data
+ * Wrapper for processed powerpoint data
  */
 public class PptData {
+    private int slideWordCount;
+    private int commentWordCount;
     private ArrayList<TextGroup> slideTxt;
     private ArrayList<TextGroup> commentTxt;
     private ArrayList<BufferedImage> images;
@@ -14,6 +17,24 @@ public class PptData {
         this.slideTxt = slideTxt;
         this.commentTxt = commentTxt;
         this.images = images;
+    }
+    public int getWordCount() {
+        return getCommentWordCount() + getSlideWordCount();
+    }
+    public int getSlideWordCount() {
+        int ret = 0;
+        for (TextGroup i : slideTxt) {
+            ret += i.getWords().size();
+        }
+        return ret;
+    }
+
+    public int getCommentWordCount() {
+        int ret = 0;
+        for (TextGroup i : commentTxt) {
+            ret += i.getWords().size();
+        }
+        return ret;
     }
 
     public ArrayList<BufferedImage> getImages() {
