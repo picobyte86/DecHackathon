@@ -1,7 +1,9 @@
 package application;
 
+import application.Model.DocxUtils;
 import application.Model.PdfUtils;
 import application.Model.PptUtils;
+import application.Model.Types.DocxData;
 import application.Model.Types.PdfData;
 import application.Model.Types.PptData;
 import application.Model.Types.VttData;
@@ -31,11 +33,8 @@ public class Main extends Application {
         //for (int i = 0; i < images.size(); i++) {
         //    ImageIO.write(images.get(i), "PNG", new File("data/images/" + i + ".png"));
         //}
-        VttData data = VttUtils.decode(new File("data/VTT/sample1.vtt"));
-        System.out.println(data.getLanguage());
-        System.out.println(data.getDuration());
-        System.out.println(data.getRecognizability());
-        System.out.println(data.getEntries().get(0).getSubtitle());
+        DocxData data = DocxUtils.decode(new File("data/word/sample1.docx"));
+        System.out.println(data.getTextGroup());
         Parent root = stageLoader.load();
         primaryStage.setTitle("Hackathon Submission");
         primaryStage.setScene(new Scene(root, 600, 400));
