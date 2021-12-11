@@ -16,8 +16,11 @@ import java.util.*;
 public class Rake {
     String language;
     String stopWordsPattern;
-
+    long start;
+    long end;
+    long time;
     public Rake(String language) throws FileNotFoundException {
+        start = System.currentTimeMillis();
         this.language = language;
         File file = new File("src/libraries/rake/data/stopwords/languages/" + language + ".txt");
         // Read the stop words file for the given language
@@ -43,6 +46,8 @@ public class Rake {
 
                 // Join all regexes into global pattern
                 this.stopWordsPattern = String.join("|", regexList);
+                end = System.currentTimeMillis();
+                time = end - start;
             } catch (Exception e) {
                 throw new Error("An error occurred reading stop words for language " + language);
             }
@@ -206,4 +211,7 @@ public class Rake {
         return this.sortHashMap(keywordCandidates);
     }
 
+    public long getTime() {
+        return time;
+    }
 }

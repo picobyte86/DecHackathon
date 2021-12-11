@@ -6,34 +6,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.View.Info">
    <children>
-      <TextArea layoutX="20.0" layoutY="47.0" prefHeight="489.0" prefWidth="200.0" />
-      <Label layoutX="20.0" layoutY="14.0" prefHeight="27.0" prefWidth="50.0" text="Stats:">
+      <TextArea fx:id="ta2" layoutX="577.0" layoutY="32.0" prefHeight="430.0" prefWidth="200.0" />
+      <Label layoutX="577.0" layoutY="1.0" prefHeight="27.0" prefWidth="50.0" text="Stats:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="235.0" layoutY="14.0" prefHeight="27.0" prefWidth="85.0" text="Keywords:">
+      <Label layoutX="6.0" layoutY="1.0" prefHeight="27.0" prefWidth="85.0" text="Keywords:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="235.0" layoutY="390.0" prefHeight="27.0" prefWidth="115.0" text="Words Usage:">
+      <Label layoutX="212.0" layoutY="1.0" prefHeight="27.0" prefWidth="115.0" text="Words Usage:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="492.0" layoutY="14.0" prefHeight="27.0" prefWidth="115.0" text="Related Files:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button layoutX="710.0" layoutY="488.0" mnemonicParsing="false" stylesheets="@sample.css" text="Back">
+      <Button fx:id="backBtn" layoutX="710.0" layoutY="488.0" mnemonicParsing="false" onAction="#backBtnOnClick" stylesheets="@sample.css" text="Back">
          <font>
             <Font name="Segoe UI Semibold" size="18.0" />
          </font>
       </Button>
+      <TextArea fx:id="ta1" layoutX="216.0" layoutY="272.0" prefHeight="266.0" prefWidth="348.0" />
+      <Label layoutX="216.0" layoutY="245.0" prefHeight="27.0" prefWidth="115.0" text="Summary:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
