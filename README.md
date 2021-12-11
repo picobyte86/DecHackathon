@@ -1,5 +1,9 @@
 # DecHackathon
 rip sleep
-https://github.com/Linguistic/rake
-https://jsoup.org/
-https://pdfbox.apache.org/
+###Resources 
+- https://github.com/Linguistic/rake 
+- https://jsoup.org/ 
+- https://pdfbox.apache.org/ 
+- https://mvnrepository.com/artifact/org.json/json
+###Team Members
+yes

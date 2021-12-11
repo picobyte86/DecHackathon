@@ -8,5 +8,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="library" name="javafx-swt" level="project" />
+    <orderEntry type="library" name="jsoup-1.14.3" level="project" />
+    <orderEntry type="library" name="org.json:json:20211205" level="project" />
   </component>
 </module>
