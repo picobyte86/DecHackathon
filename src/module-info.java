@@ -7,6 +7,8 @@ module DecHackathon {
     requires java.desktop;
     requires java.net.http;
     requires org.jsoup;
+    requires jdk.jsobject;
+    requires org.json;
     requires pdfbox.app;
     opens application.Controller;
     opens application.View;
