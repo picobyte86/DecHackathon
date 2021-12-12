@@ -105,6 +105,9 @@ public class MainController implements Initializable {
                     });
                     ap1.getChildren().add(h);
                 }
+                for (Result i : result) {
+                    i.save(new File("data/results/" + file.getName() + " - " + i.getKeyword() + ".txt"));
+                }
             } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
             }
@@ -167,6 +170,9 @@ public class MainController implements Initializable {
                     });
                     ap1.getChildren().add(h);
                 }
+                for (Result i : result) {
+                    i.save(new File("data/results/" + file.getName() + " - " + i.getKeyword() + ".txt"));
+                }
             } catch (IOException | SAXException | ParserConfigurationException | InterruptedException e) {
                 e.printStackTrace();
             }
@@ -215,6 +221,9 @@ public class MainController implements Initializable {
                         }
                     });
                     ap1.getChildren().add(h);
+                }
+                for (Result i : result) {
+                    i.save(new File("data/results/" + file.getName() + " - " + i.getKeyword() + ".txt"));
                 }
             } catch (FileNotFoundException | ParseException e) {
                 e.printStackTrace();
@@ -270,6 +279,9 @@ public class MainController implements Initializable {
                         }
                     });
                     ap1.getChildren().add(h);
+                }
+                for (Result i : result) {
+                    i.save(new File("data/results/" + file.getName() + " - " + i.getKeyword() + ".txt"));
                 }
             } catch (IOException | ParserConfigurationException | SAXException | InterruptedException e) {
                 e.printStackTrace();
