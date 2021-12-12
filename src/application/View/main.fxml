@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.MainController">
+<AnchorPane fx:id="ap1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.MainController">
    <children>
-      <TextArea fx:id="ta2" layoutX="577.0" layoutY="32.0" prefHeight="430.0" prefWidth="200.0" />
+      <TextArea fx:id="ta2" layoutX="577.0" layoutY="32.0" prefHeight="94.0" prefWidth="200.0" />
       <Label layoutX="577.0" layoutY="1.0" prefHeight="27.0" prefWidth="50.0" text="Stats:">
          <font>
             <Font size="18.0" />
@@ -19,7 +19,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="212.0" layoutY="1.0" prefHeight="27.0" prefWidth="115.0" text="Words Usage:">
+      <Label layoutX="258.0" layoutY="15.0" prefHeight="27.0" prefWidth="115.0" text="Words Usage:">
          <font>
             <Font size="18.0" />
          </font>
@@ -29,11 +29,12 @@
             <Font name="Segoe UI Semibold" size="18.0" />
          </font>
       </Button>
-      <TextArea fx:id="ta1" layoutX="216.0" layoutY="272.0" prefHeight="266.0" prefWidth="348.0" />
-      <Label layoutX="216.0" layoutY="245.0" prefHeight="27.0" prefWidth="115.0" text="Summary:">
+      <TextArea fx:id="ta1" layoutX="577.0" layoutY="179.0" prefHeight="294.0" prefWidth="200.0" />
+      <Label layoutX="577.0" layoutY="145.0" prefHeight="27.0" prefWidth="115.0" text="Summary:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <AnchorPane fx:id="ap2" layoutX="258.0" layoutY="39.0" prefHeight="498.0" prefWidth="303.0" />
    </children>
 </AnchorPane>

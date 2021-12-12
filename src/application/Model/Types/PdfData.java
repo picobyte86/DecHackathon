@@ -14,11 +14,11 @@ public class PdfData {
         this.images = images;
     }
     public int getWordCount() {
-        int ret = 0;
-        for (TextGroup i : text) {
-            ret += i.getWords().size();
-        }
-        return ret;
+            int ret = 0;
+            for (TextGroup i : text) {
+                ret += i.getWords().size();
+            }
+            return ret;
     }
     public ArrayList<TextGroup> getText() {
         return text;

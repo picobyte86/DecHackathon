@@ -37,6 +37,14 @@ public class DocxData {
         this.images = images;
     }
 
+    public int getWordCount() {
+        int ret = 0;
+        for (TextGroup i : text) {
+            ret += i.getWords().size();
+        }
+        return ret;
+    }
+
     @Override
     public String toString() {
         return "DocxData{" +
