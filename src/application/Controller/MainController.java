@@ -9,14 +9,14 @@ import application.Model.VttUtils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -28,6 +28,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -106,7 +107,33 @@ public class MainController implements Initializable {
                 pieChart2.setLayoutX(51);
                 pieChart2.setLayoutY(266);
                 ap2.getChildren().addAll(pieChart, pieChart2);
-            } catch (IOException | SAXException | ParserConfigurationException e) {
+
+                ArrayList<Result> result = PptUtils.search(ppt);
+                int count  = 0;
+                for (Result r: result) {
+                    Hyperlink h = new Hyperlink(r.getKeyword());
+                    h.setLayoutX(10);
+                    h.setLayoutY(30 + 10 * count);
+                    count += 1;
+                    h.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent actionEvent) {
+                            Stage primaryStage = new Stage();
+                            ScrollPane sp3 = new ScrollPane();
+                            double count2 = 10;
+                            for (OnlineResource or :r.getResults()) {
+                                Label l = new Label(or.getTitle() + ": " + or.getHyperlink());
+                                sp3.getChildrenUnmodifiable().add(l);
+                                l.setLayoutY(count2);
+                                count2 = 30 + l.getLayoutY() + l.getPrefWidth();
+                            }
+                            Scene scene = new Scene(sp3);
+                            primaryStage.setScene(scene);
+                            primaryStage.show();
+                        }
+                    });
+                }
+            } catch (IOException | SAXException | ParserConfigurationException | InterruptedException e) {
                 e.printStackTrace();
             }
         } else if (Controller.vtt) {
