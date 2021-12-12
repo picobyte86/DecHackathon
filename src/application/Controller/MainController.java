@@ -71,7 +71,7 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setMinSize(200, 200);
+                pieChart.setMinSize(150, 150);
                 pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
                 pieChart.setLegendVisible(false);
@@ -91,7 +91,7 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setMinSize(200, 200);
+                pieChart.setMinSize(150, 150);
                 pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
                 pieChart.setLegendVisible(false);
@@ -103,7 +103,7 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart2 = new PieChart(list2);
-                pieChart2.setMinSize(200, 200);
+                pieChart2.setMinSize(150, 150);
                 pieChart2.setLayoutX(0);
                 pieChart2.setLayoutY(266);
                 pieChart2.setLegendVisible(false);
@@ -151,7 +151,7 @@ public class MainController implements Initializable {
                 }
                 PieChart pieChart = new PieChart(list);
                 pieChart.setLegendVisible(false);
-                pieChart.setMinSize(200, 200);
+                pieChart.setMinSize(150, 150);
                 pieChart.setLayoutX(0);
             } catch (FileNotFoundException | ParseException e) {
                 e.printStackTrace();
@@ -171,7 +171,7 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setMinSize(200, 200);
+                pieChart.setMinSize(150, 150);
                 pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
                 pieChart.setLegendVisible(false);
