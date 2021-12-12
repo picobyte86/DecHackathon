@@ -23,11 +23,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader stageLoader = new FXMLLoader(getClass().getResource("View/splashscreen.fxml"));
-        DocxData data = DocxUtils.decode(new File("data/word/sample2.docx"));
-        ArrayList<Result> r = DocxUtils.search(data);
-        for (Result i : r) {
-            i.save(new File("data/results/result - " + i.getKeyword() + ".txt"));
-        }
+        //DocxData data = DocxUtils.decode(new File("data/word/sample2.docx"));
+        //ArrayList<Result> r = DocxUtils.search(data);
+        //for (Result i : r) {
+        //    i.save(new File("data/results/result - " + i.getKeyword() + ".txt"));
+        //}
         //PdfData pdfdata = PdfUtils.decode(new File("data/pdf/Chapter 14 - JavaFX with Scene Builder.pdf"));
         //System.out.println(pdfdata.getText());
         //ArrayList<BufferedImage> images = pdfdata.getImages();

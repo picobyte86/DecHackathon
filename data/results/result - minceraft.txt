@@ -1,7 +1,7 @@
 {
   "keyword" : "minceraft",
   "results" : [ {
-    "hyperlink" : "https://books.google.com/books?hl=en&lr=&id=kPYvEAAAQBAJ&oi=fnd&pg=PA67&dq=minceraft&ots=P4y5mpVsLU&sig=alH7-CV7mdXG0WAbQA1SyharMaw",
+    "hyperlink" : "https://books.google.com/books?hl=en&lr=&id=kPYvEAAAQBAJ&oi=fnd&pg=PA67&dq=minceraft&ots=P4y5mpVwSO&sig=khFXfq18b3iygX8ObBr-NDw3PSs",
     "title" : "TE YILDIRIM - Görsel Kültürde İletişim, Sanat ve Temsil-Erkan …, 2021 - books.google.com",
     "description" : "… Konuyu bu oyunlardan biri olan Minceraft Survival Mode üzerinden açıklayacağız. … We will explain the subject through one of these games, Minceraft Survival Mode. … Konuyu bu oyunlardan bir tanesi olan Minceraft Survival Mode üzerinden açıklayacağız. Minecraft Survival Mod’…"
   }, {

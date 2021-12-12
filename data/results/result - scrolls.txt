@@ -17,7 +17,7 @@
     "title" : "M Burrows - 1955 - philpapers.org",
     "description" : "Millar Burrows, The Dead Sea Scrolls - PhilPapers … The Dead Sea Scrolls … The Dead Sea Scrolls on Microfiche: A Comprehensive Facsimile Edition of the Texts From the Judean Desert, Vol. [The Microfiches]The Dead Sea …"
   }, {
-    "hyperlink" : "https://books.google.com/books?hl=en&lr=&id=KXJu5A-MmMMC&oi=fnd&pg=PR9&dq=scrolls&ots=M32etEMelG&sig=5EV3g9sOlvl6A8zEsiVXnHhUHvs",
+    "hyperlink" : "https://books.google.com/books?hl=en&lr=&id=KXJu5A-MmMMC&oi=fnd&pg=PR9&dq=scrolls&ots=M32etEMirL&sig=SyW66y6ryChjz1QsPIq6jMRd-C0",
     "title" : "G Vermes - 1995 - books.google.com",
     "description" : "'This significantly expanded and revised fourth edition of what has always been the best English translation of the Scrolls has become a combination of two books: Vermes has replaced nearly all of the original Introduction with an abridged version of the corresponding …"
   } ]
