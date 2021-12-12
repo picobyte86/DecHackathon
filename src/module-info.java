@@ -10,8 +10,12 @@ module DecHackathon {
     requires jdk.jsobject;
     requires org.json;
     requires pdfbox.app;
+    requires java.sql;
+    requires jackson.core.asl;
+    requires jackson.mapper.asl;
     opens application.Controller;
     opens application.View;
     opens application.Model;
     opens application;
+    opens application.Model.Types;
 }

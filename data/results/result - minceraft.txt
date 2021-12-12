@@ -1,0 +1,24 @@
+{
+  "keyword" : "minceraft",
+  "results" : [ {
+    "hyperlink" : "https://books.google.com/books?hl=en&lr=&id=kPYvEAAAQBAJ&oi=fnd&pg=PA67&dq=minceraft&ots=P4y5mpVpRO&sig=Y4VpbvSOUDo46yaQ93O5Su3c-2Q",
+    "title" : "TE YILDIRIM - Görsel Kültürde İletişim, Sanat ve Temsil-Erkan …, 2021 - books.google.com",
+    "description" : "… Konuyu bu oyunlardan biri olan Minceraft Survival Mode üzerinden açıklayacağız. … We will explain the subject through one of these games, Minceraft Survival Mode. … Konuyu bu oyunlardan bir tanesi olan Minceraft Survival Mode üzerinden açıklayacağız. Minecraft Survival Mod’…"
+  }, {
+    "hyperlink" : "http://essay.utwente.nl/68415/",
+    "title" : "M Enk - 2015 - essay.utwente.nl",
+    "description" : "This document describes the development of an instruction intended for teaching quantum mechanics to Dutch physics students within upper secondary education, which is necessary because of the implementation of quantum mechanics within the Centraal Eindexamen. This …"
+  }, {
+    "hyperlink" : "https://www.diva-portal.org/smash/record.jsf?pid=diva2:946866",
+    "title" : "F Lundström, J Pernu - 2015 - diva-portal.org",
+    "description" : "I studien undersöks hur barn uppfattar begreppet fritid. Undersökningen är en kvalitativ fallstudie baserad på två gruppintervjuer med samma barn. Resultatet visar att barnen uttrycker att fritid bara räknas som fritid om den innehåller sociala relationer, personlig utveckling och …"
+  }, {
+    "hyperlink" : "https://core.ac.uk/download/pdf/30676686.pdf",
+    "title" : "K Macpherson - The Educati on Institute. Retrieved, 2013 - core.ac.uk",
+    "description" : "Australian teenagers have welcomed digital technologies into their daily lives with open arms. As one Year 12 girl said of her mobile phone,“I just like having it with me”. But the thirst for technology consumption does not translate into an interest in pursuing technology as a …"
+  }, {
+    "hyperlink" : "https://gupea.ub.gu.se/handle/2077/62204",
+    "title" : "R Alfengård - 2019 - gupea.ub.gu.se",
+    "description" : "In this thesis, I have investigated how artistic and cultural values are being produced in art games. In my work I have analyzed four art games and these are That Dragon, Cancer, Papers Please, Gone Home and The Stanley Parable. To dissect these digital games, I have used …"
+  } ]
+}

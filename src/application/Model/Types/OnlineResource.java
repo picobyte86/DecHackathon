@@ -1,4 +1,13 @@
 package application.Model.Types;
+
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.ObjectWriter;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
 /*
 * Represents result from web search
  */
@@ -12,7 +21,12 @@ public class OnlineResource {
         this.title = title;
         this.description = description;
     }
-
+    public void save(File txtFile) throws IOException {
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = ow.writeValueAsString(this);
+        FileOutputStream os = new FileOutputStream(txtFile);
+        os.write(json.getBytes(StandardCharsets.UTF_8));
+    }
     public String getHyperlink() {
         return hyperlink;
     }

@@ -1,9 +1,6 @@
 package application.Model;
 
-import application.Model.Types.DocxData;
-import application.Model.Types.TextGroup;
-import application.Model.Types.VttData;
-import application.Model.Types.VttEntryData;
+import application.Model.Types.*;
 import libraries.rake.com.linguistic.rake.Rake;
 import libraries.rake.com.linguistic.rake.RakeLanguages;
 import netscape.javascript.JSObject;
@@ -12,8 +9,12 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.http.HttpClient;
 import java.text.ParseException;
 import java.util.*;
+
+import static application.Model.WebScrap.searchEntry;
 
 public class VttUtils {
     public static VttData decode(File file) throws FileNotFoundException, ParseException {
@@ -91,6 +92,17 @@ public class VttUtils {
                 String[] temp = i.substring(5).split(":");
                 ret.put(temp[0], temp[1]);
             }
+        }
+        return ret;
+    }
+    public static ArrayList<Result> search(VttData data) throws IOException, InterruptedException {
+        ArrayList<Result> ret = new ArrayList<Result>();
+        HttpClient client = HttpClient.newBuilder()
+                .build();
+        ArrayList<String> text = data.getText();
+        for (int i = 0; i < text.size(); i++) {
+            Result r = new Result(text.get(i), searchEntry(text.get(i), client));
+            ret.add(r);
         }
         return ret;
     }

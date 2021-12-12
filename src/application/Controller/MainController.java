@@ -66,7 +66,7 @@ public class MainController implements Initializable {
                 PdfData pdf = PdfUtils.decode(file);
                 ta1.setText("Words Processed: " + pdf.getWordCount() + "\n" + "Time taken: " + PdfUtils.time);
                 ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
-                for (TextGroup t : pdf.getText()) {
+                for (TextGroup t : pdf.getTextEntries()) {
                     for (String s : t.getWords()) {
                         list.add(new PieChart.Data(s, t.getWeight()));
                     }

@@ -1,0 +1,24 @@
+{
+  "keyword" : "minecraft",
+  "results" : [ {
+    "hyperlink" : "https://kilthub.cmu.edu/articles/Minecraft_Beyond_Construction_and_Survival/10029221/files/18081017.pdf",
+    "title" : "SC Duncan - 2011 - kilthub.cmu.edu",
+    "description" : "Minecraft is an alluringly moving target to try to pin down, and so in order to assess how it is “well-played”—well-designed and iteratively well-redesigned, in this particular case—we need to think more broadly about the approach the developers have taken toward the …"
+  }, {
+    "hyperlink" : "https://pubs.nctm.org/view/journals/tcm/21/1/article-p56.xml",
+    "title" : "B Bos, L Wilder, M Cook, R O'Donnell - Teaching Children …, 2014 - pubs.nctm.org",
+    "description" : "The Common Core State Standards can be taught with Minecraft, an interactive creative Lego®-like game. Integrating Science, Technology, Engineering, and Mathematics (iSTEM) authors share ideas and activities that stimulate student interest in the integrated fields of …"
+  }, {
+    "hyperlink" : "https://www.igi-global.com/article/minecraft-as-a-creative-tool/116516",
+    "title" : "M Cipollone, CC Schifter, RA Moffat - International Journal of Game …, 2014 - igi-global.com",
+    "description" : "Many scholars are enthusiastic about the potential learning opportunities present in the sandbox-style gaming environment, Minecraft. In the following case study, the authors explored the use of Minecraft in a high school literature class and the presentation of …"
+  }, {
+    "hyperlink" : "https://ojs.aaai.org/index.php/AAAI/article/view/10744",
+    "title" : "C Tessler, S Givony, T Zahavy, D Mankowitz… - Proceedings of the …, 2017 - ojs.aaai.org",
+    "description" : "We propose a lifelong learning system that has the ability to reuse and transfer knowledge from one task to another while efficiently retaining the previously learned knowledge-base. Knowledge is transferred by learning reusable skills to solve tasks in Minecraft, a popular …"
+  }, {
+    "hyperlink" : "https://search.informit.org/doi/abs/10.3316/aeipt.195598",
+    "title" : "D Short - Teaching science, 2012 - search.informit.org",
+    "description" : "Minecraft is a multiplayer sandbox video game based in a virtual world modelled on the real world. Players are able to build and craft everyday items using blocks. The cubic geometry of Minecraft lends itself to the teaching of various academic subjects. Minecraft also has a …"
+  } ]
+}

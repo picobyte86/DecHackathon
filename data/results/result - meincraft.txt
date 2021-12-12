@@ -1,0 +1,24 @@
+{
+  "keyword" : "meincraft",
+  "results" : [ {
+    "hyperlink" : "https://www.degruyter.com/document/doi/10.14361/zfmw-2021-130209/html",
+    "title" : "S Strick - Zeitschrift für Medienwissenschaft, 2021 - degruyter.com",
+    "description" : "Das Reddit-Forum geht phänomenologisch vor: Ein‹ absichtsloses Erscheinen› von Hakenkreuzen wird dokumentiert, von der ungewöhnlichen Wolkenform bis zum Muster eines Gartenzauns. Im hier genannten Fall des nationalsozialistischen Symbols in Minecraft handelt es …"
+  }, {
+    "hyperlink" : "https://www.diva-portal.org/smash/record.jsf?pid=diva2:1596796",
+    "title" : "H Liu - 2021 - diva-portal.org",
+    "description" : "Stockholm is experiencing the fast urban expansion with major development projects including housing, transportation and public spaces in and out of the city in which existing blocks are involved at different levels. The project Urbancraft’s proposal to transform Kvarteret …"
+  }, {
+    "hyperlink" : "http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.725.4925&rep=rep1&type=pdf",
+    "title" : "J Seiler - 2013 - Citeseer",
+    "description" : "“All data necessary to understand, assess, and extend the conclusions of the manuscript must be available to any reader. All computer codes involved in the creation or analysis of data must also be available to any reader of Science. After publication, all reasonable requests for …"
+  }, {
+    "hyperlink" : "https://www.linguistics.ruhr-uni-bochum.de/anselm/pub/info/n_.pdf",
+    "title" : "S Schultz-Balluff, KP Wegera, N Bartsch, R Wache - linguistics.ruhr-uni-bochum.de",
+    "description" : "… wir ſehen in das kein pild an im ſtet noch kein ſchon wann die vͤbeln habent im ſein antluͤcz zeſlagen vnd vngeſawbert Nu waz das mein aller(=) groͤſter ſmercz das mich der verlaſzen het der mein ainiger ſun waſz do waz [33r,01]mir ſogetan<er> ſmercz daz mir alle mein Craft …"
+  }, {
+    "hyperlink" : "https://www.degruyter.com/document/doi/10.14361/9783839454206-013/html",
+    "title" : "AAA Mol - History in Games, 2020 - degruyter.com",
+    "description" : "This chapter explores the concept of counterplay, particularly concerning games set in the past. It connects this concept from game studies with the act of counterfactual historying, as well as efforts to democratize access to the past through games. This chapter investigates …"
+  } ]
+}
