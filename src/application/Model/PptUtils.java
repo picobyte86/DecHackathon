@@ -105,7 +105,7 @@ public class PptUtils {
             TextGroup group = new TextGroup(temp, i);
             retCommentTxt.add(group);
         });
-        PptData data = new PptData(retSlideTxt, retCommentTxt, images);
+        PptData data = new PptData(bugFix(retSlideTxt), bugFix(retCommentTxt), images);
         zFile.close();
         long end = System.currentTimeMillis();
         time = end - start;

@@ -43,7 +43,7 @@ public class SplashController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         progress.getChildren().add(new Transition() {{
-            setCycleDuration(Duration.millis(8000));
+            setCycleDuration(Duration.millis(2000));
         }
 
             @Override

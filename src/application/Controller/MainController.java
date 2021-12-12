@@ -71,8 +71,10 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setLayoutX(0);
-                pieChart.setLayoutY(33);
+                pieChart.setLayoutX(-100);
+                pieChart.setLayoutY(-60);
+                pieChart.setScaleX(0.75);
+                pieChart.setScaleY(0.75);
                 pieChart.setLegendVisible(false);
                 pieChart.setLabelsVisible(true);
 
@@ -118,8 +120,10 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setLayoutX(0);
-                pieChart.setLayoutY(33);
+                pieChart.setLayoutX(-100);
+                pieChart.setLayoutY(-60);
+                pieChart.setScaleX(0.75);
+                pieChart.setScaleY(0.75);
                 pieChart.setLegendVisible(false);
                 pieChart.setLabelsVisible(true);
 
@@ -130,8 +134,10 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart2 = new PieChart(list2);
-                pieChart2.setLayoutX(0);
-                pieChart2.setLayoutY(266);
+                pieChart2.setLayoutX(-100);
+                pieChart2.setLayoutY(200);
+                pieChart2.setScaleX(0.75);
+                pieChart2.setScaleY(0.75);
                 pieChart2.setLegendVisible(false);
                 pieChart2.setLabelsVisible(true);
                 ap2.getChildren().addAll(pieChart, pieChart2);
@@ -177,6 +183,10 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
+                pieChart.setLayoutX(-100);
+                pieChart.setLayoutY(-60);
+                pieChart.setScaleX(0.75);
+                pieChart.setScaleY(0.75);
                 pieChart.setLegendVisible(false);
                 pieChart.setLabelsVisible(true);
                 pieChart.setLayoutX(0);
@@ -229,8 +239,10 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setLayoutX(0);
-                pieChart.setLayoutY(33);
+                pieChart.setLayoutX(-100);
+                pieChart.setLayoutY(-60);
+                pieChart.setScaleX(0.75);
+                pieChart.setScaleY(0.75);
                 pieChart.setLegendVisible(false);
                 pieChart.setLabelsVisible(true);
 

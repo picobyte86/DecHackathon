@@ -1,5 +1,5 @@
-# DecHackathon
-rip sleep
+# DecHackathon - 
+
 ###Resources 
 - https://github.com/Linguistic/rake 
 - https://jsoup.org/ 
