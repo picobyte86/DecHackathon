@@ -10,5 +10,6 @@
     <orderEntry type="library" name="jsoup-1.14.3" level="project" />
     <orderEntry type="library" name="org.json:json:20211205" level="project" />
     <orderEntry type="library" name="org.codehaus.jackson:jackson-mapper-asl:1.9.9" level="project" />
+    <orderEntry type="library" name="javafx-swt" level="project" />
   </component>
 </module>

@@ -90,7 +90,7 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setPrefSize(200, 200);
+                pieChart.setMinSize(200, 200);
                 pieChart.setLayoutX(51);
                 pieChart.setLayoutY(33);
 
@@ -101,12 +101,13 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart2 = new PieChart(list2);
-                pieChart2.setPrefSize(200, 200);
+                pieChart2.setMinSize(200, 200);
                 pieChart2.setLayoutX(51);
                 pieChart2.setLayoutY(266);
                 ap2.getChildren().addAll(pieChart, pieChart2);
 
                 ArrayList<Result> result = PptUtils.search(ppt);
+                ta2.setText(result.size() + "");
                 int count  = 0;
                 for (Result r: result) {
                     Hyperlink h = new Hyperlink(r.getKeyword());
@@ -146,7 +147,7 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setPrefSize(200, 200);
+                pieChart.setMinSize(200, 200);
                 pieChart.setLayoutX(51);
             } catch (FileNotFoundException | ParseException e) {
                 e.printStackTrace();
@@ -166,7 +167,7 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setPrefSize(200, 200);
+                pieChart.setMinSize(200, 200);
                 pieChart.setLayoutX(51);
                 pieChart.setLayoutY(33);
             } catch (IOException | ParserConfigurationException | SAXException e) {

@@ -3,14 +3,6 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/src/libraries/jsoup-1.14.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/src/libraries/pdfbox-app-2.0.24.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libraries/javafx-sdk-17.0.1/lib/javafx-swt.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libraries/javafx-sdk-17.0.1/lib/javafx.base.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libraries/javafx-sdk-17.0.1/lib/javafx.controls.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libraries/javafx-sdk-17.0.1/lib/javafx.fxml.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libraries/javafx-sdk-17.0.1/lib/javafx.graphics.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libraries/javafx-sdk-17.0.1/lib/javafx.media.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libraries/javafx-sdk-17.0.1/lib/javafx.swing.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libraries/javafx-sdk-17.0.1/lib/javafx.web.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
