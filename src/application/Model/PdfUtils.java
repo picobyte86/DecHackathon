@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 
+import static application.Model.Utils.bugFix;
 import static application.Model.WebScrap.searchEntry;
 
 public class PdfUtils {
@@ -57,7 +58,7 @@ public class PdfUtils {
         });
         doc.close();
 
-        PdfData ret = new PdfData(retText, retImages);
+        PdfData ret = new PdfData(bugFix(retText), retImages);
         long end = System.currentTimeMillis();
         time = end - start;
         return ret;

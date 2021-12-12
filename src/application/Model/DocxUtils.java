@@ -89,7 +89,7 @@ public class DocxUtils {
             TextGroup group = new TextGroup(temp, i);
             retText.add(group);
         });
-        DocxData data = new DocxData(retText, images);
+        DocxData data = new DocxData(bugFix(retText), images);
         zFile.close();
         long end = System.currentTimeMillis();
         time = end - start;

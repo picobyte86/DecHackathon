@@ -14,6 +14,7 @@ import java.net.http.HttpClient;
 import java.text.ParseException;
 import java.util.*;
 
+import static application.Model.Utils.bugFix;
 import static application.Model.WebScrap.searchEntry;
 
 public class VttUtils {
@@ -53,7 +54,7 @@ public class VttUtils {
             retText.add(group);
         });
 
-        VttData ret = new VttData(data, duration, recognizability, language, retText);
+        VttData ret = new VttData(data, duration, recognizability, language, bugFix(retText));
         return ret;
     }
 
