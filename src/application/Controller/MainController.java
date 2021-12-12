@@ -71,11 +71,12 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setMinSize(150, 150);
-                pieChart.setMaxSize(150, 150);
+                pieChart.setMinSize(200, 200);
+                pieChart.setMaxSize(200, 200);
                 pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
                 pieChart.setLegendVisible(false);
+                pieChart.setLabelsVisible(true);
 
                 ap2.getChildren().addAll(pieChart);
             } catch (IOException e) {
@@ -92,11 +93,12 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setMinSize(150, 150);
-                pieChart.setMaxSize(150, 150);
+                pieChart.setMinSize(200, 200);
+                pieChart.setMaxSize(200, 200);
                 pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
                 pieChart.setLegendVisible(false);
+                pieChart.setLabelsVisible(true);
 
                 ObservableList<PieChart.Data> list2 = FXCollections.observableArrayList();
                 for (TextGroup t : ppt.getCommentTxtGroup()) {
@@ -105,19 +107,21 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart2 = new PieChart(list2);
-                pieChart2.setMinSize(150, 150);
-                pieChart2.setMaxSize(150, 150);
+                pieChart2.setMinSize(200, 200);
+                pieChart2.setMaxSize(200, 200);
                 pieChart2.setLayoutX(0);
                 pieChart2.setLayoutY(266);
                 pieChart2.setLegendVisible(false);
+                pieChart2.setLabelsVisible(true);
                 ap2.getChildren().addAll(pieChart, pieChart2);
 
-                ArrayList<Result> result = PptUtils.search(ppt);\
+                ArrayList<Result> result = PptUtils.search(ppt);
                 int count  = 0;
                 for (Result r: result) {
                     Hyperlink h = new Hyperlink(r.getKeyword());
+                    h.setMinHeight(15);
                     h.setLayoutX(10);
-                    h.setLayoutY(30 + 10 * count);
+                    h.setLayoutY(30 + 30 * count);
                     count += 1;
                     h.setOnAction(new EventHandler<ActionEvent>() {
                         @Override
@@ -154,8 +158,9 @@ public class MainController implements Initializable {
                 }
                 PieChart pieChart = new PieChart(list);
                 pieChart.setLegendVisible(false);
-                pieChart.setMinSize(150, 150);
-                pieChart.setMaxSize(150, 150);
+                pieChart.setLabelsVisible(true);
+                pieChart.setMinSize(200, 200);
+                pieChart.setMaxSize(200, 200);
                 pieChart.setLayoutX(0);
             } catch (FileNotFoundException | ParseException e) {
                 e.printStackTrace();
@@ -175,11 +180,12 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setMinSize(150, 150);
-                pieChart.setMaxSize(150, 150);
+                pieChart.setMinSize(200, 200);
+                pieChart.setMaxSize(200, 200);
                 pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
                 pieChart.setLegendVisible(false);
+                pieChart.setLabelsVisible(true);
             } catch (IOException | ParserConfigurationException | SAXException e) {
                 e.printStackTrace();
             }
