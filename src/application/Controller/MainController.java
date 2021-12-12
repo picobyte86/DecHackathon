@@ -71,7 +71,7 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setPrefSize(200, 200);
+                pieChart.setMinSize(200, 200);
                 pieChart.setLayoutX(51);
                 pieChart.setLayoutY(33);
 
