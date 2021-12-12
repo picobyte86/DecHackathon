@@ -72,8 +72,6 @@ public class MainController implements Initializable {
                 }
                 PieChart pieChart = new PieChart(list);
                 pieChart.setLayoutX(0);
-                pieChart.setScaleX(2.0);
-                pieChart.setScaleY(2.0);
                 pieChart.setLayoutY(33);
                 pieChart.setLegendVisible(false);
                 pieChart.setLabelsVisible(true);
@@ -122,8 +120,6 @@ public class MainController implements Initializable {
                 PieChart pieChart = new PieChart(list);
                 pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
-                pieChart.setScaleX(2.0);
-                pieChart.setScaleY(2.0);
                 pieChart.setLegendVisible(false);
                 pieChart.setLabelsVisible(true);
 
@@ -138,8 +134,6 @@ public class MainController implements Initializable {
                 pieChart2.setLayoutY(266);
                 pieChart2.setLegendVisible(false);
                 pieChart2.setLabelsVisible(true);
-                pieChart.setScaleX(2.0);
-                pieChart.setScaleY(2.0);
                 ap2.getChildren().addAll(pieChart, pieChart2);
 
                 ArrayList<Result> result = PptUtils.search(ppt);
@@ -185,8 +179,6 @@ public class MainController implements Initializable {
                 PieChart pieChart = new PieChart(list);
                 pieChart.setLegendVisible(false);
                 pieChart.setLabelsVisible(true);
-                pieChart.setScaleX(2.0);
-                pieChart.setScaleY(2.0);
                 pieChart.setLayoutX(0);
 
                 ArrayList<Result> result = VttUtils.search(vtt);
@@ -239,8 +231,6 @@ public class MainController implements Initializable {
                 PieChart pieChart = new PieChart(list);
                 pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
-                pieChart.setScaleX(2.0);
-                pieChart.setScaleY(2.0);
                 pieChart.setLegendVisible(false);
                 pieChart.setLabelsVisible(true);
 
