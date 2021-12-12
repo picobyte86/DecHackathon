@@ -9,11 +9,10 @@ import java.util.Iterator;
 import java.util.Collections;
 
 
-class SumModel {
+public class SumModel {
     File file;
     FileInputStream in;
-    FileOutputStream out;
-    ArrayList<Sentence> sentences, contentSummary;
+    public ArrayList<Sentence> sentences, contentSummary;
     ArrayList<Paragraph> paragraphs;
     int sentNo, paraNo;
 
@@ -21,15 +20,14 @@ class SumModel {
     LinkedHashMap<Sentence, Double> dictionary;
 
 
-    SumModel(File file) {
+    public SumModel(File file) {
         this.file = file;
         in = null;
-        out = null;
         sentNo = 0;
         paraNo = 0;
     }
 
-    void init() {
+    public void init() {
         sentences = new ArrayList<Sentence>();
         paragraphs = new ArrayList<Paragraph>();
         contentSummary = new ArrayList<Sentence>();
@@ -38,7 +36,6 @@ class SumModel {
         paraNo = 0;
         try {
             in = new FileInputStream(file);
-            out = new FileOutputStream("output.txt");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -46,7 +43,7 @@ class SumModel {
         }
     }
 
-    void extractSentenceFromContext() {
+    public void extractSentenceFromContext() {
         int nextChar, j = 0;
         int prevChar = -1;
         try {
@@ -75,7 +72,7 @@ class SumModel {
 
     }
 
-    void groupSentencesIntoParagraphs() {
+    public void groupSentencesIntoParagraphs() {
         int paraNum = 0;
         Paragraph paragraph = new Paragraph(0);
 
@@ -108,7 +105,7 @@ class SumModel {
         return commonCount;
     }
 
-    void createIntersectionMatrix() {
+    public void createIntersectionMatrix() {
         intersectionMatrix = new double[sentNo][sentNo];
         for (int i = 0; i < sentNo; i++) {
             for (int j = 0; j < sentNo; j++) {
@@ -125,7 +122,7 @@ class SumModel {
         }
     }
 
-    void createDictionary() {
+    public void createDictionary() {
         for (int i = 0; i < sentNo; i++) {
             double score = 0;
             for (int j = 0; j < sentNo; j++) {
@@ -136,7 +133,7 @@ class SumModel {
         }
     }
 
-    void createSummary() {
+    public void createSummary() {
 
         for (int j = 0; j <= paraNo; j++) {
             int primary_set = paragraphs.get(j).sentences.size() / 5;
