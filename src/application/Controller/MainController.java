@@ -112,8 +112,7 @@ public class MainController implements Initializable {
                 pieChart2.setLegendVisible(false);
                 ap2.getChildren().addAll(pieChart, pieChart2);
 
-                ArrayList<Result> result = PptUtils.search(ppt);
-                ta2.setText(result.size() + "");
+                ArrayList<Result> result = PptUtils.search(ppt);\
                 int count  = 0;
                 for (Result r: result) {
                     Hyperlink h = new Hyperlink(r.getKeyword());
@@ -137,6 +136,7 @@ public class MainController implements Initializable {
                             primaryStage.show();
                         }
                     });
+                    ap1.getChildren().add(h);
                 }
             } catch (IOException | SAXException | ParserConfigurationException | InterruptedException e) {
                 e.printStackTrace();
