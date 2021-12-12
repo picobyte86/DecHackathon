@@ -1,11 +1,8 @@
 package application.Controller;
 
 import application.Main;
-import application.Model.DocxUtils;
-import application.Model.PdfUtils;
-import application.Model.PptUtils;
+import application.Model.*;
 import application.Model.Types.*;
-import application.Model.VttUtils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -279,6 +276,19 @@ public class MainController implements Initializable {
                         }
                     });
                     ap1.getChildren().add(h);
+
+                    SumModel summary = new SumModel(file);
+                    summary.init();
+                    summary.extractSentenceFromContext();
+                    summary.groupSentencesIntoParagraphs();
+                    summary.createIntersectionMatrix();
+                    summary.createDictionary();
+                    summary.createSummary();
+                    String s = "";
+                    for(Sentence sentence : summary.contentSummary){
+                        s += sentence.value;
+                    }
+                    ta2.setText(s);
                 }
                 for (Result i : result) {
                     i.save(new File("data/results/" + file.getName() + " - " + i.getKeyword() + ".txt"));
