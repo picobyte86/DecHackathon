@@ -1,7 +1,11 @@
 package application.Model;
 
+import application.Model.Types.DocxData;
+import application.Model.Types.TextGroup;
 import application.Model.Types.VttData;
 import application.Model.Types.VttEntryData;
+import libraries.rake.com.linguistic.rake.Rake;
+import libraries.rake.com.linguistic.rake.RakeLanguages;
 import netscape.javascript.JSObject;
 import org.json.JSONObject;
 
@@ -15,6 +19,7 @@ public class VttUtils {
     public static VttData decode(File file) throws FileNotFoundException, ParseException {
         Scanner sc = new Scanner(file);
         ArrayList<VttEntryData> data = new ArrayList<VttEntryData>();
+        Rake rake = new Rake(RakeLanguages.ENGLISH);
         sc.nextLine();
         sc.nextLine();
         Date duration = VttData.dateFormat.parse(parseNoteValue(sc.nextLine(), "duration"));
@@ -23,6 +28,7 @@ public class VttUtils {
         sc.nextLine();
         String language = parseNoteValue(sc.nextLine(), "language");
         sc.nextLine();
+        ArrayList<String> rakeText = new ArrayList<>();
         while (sc.hasNextLine()) {
             double confidence = Double.parseDouble(parseNoteValue(sc.nextLine(), "Confidence"));
             sc.nextLine();
@@ -33,9 +39,20 @@ public class VttUtils {
             String subtitle = sc.nextLine();
             sc.nextLine();
             VttEntryData entry = new VttEntryData(confidence, uuid, t1, t2, subtitle);
+            rakeText.addAll(Utils.cleanText(subtitle));
             data.add(entry);
         }
-        VttData ret = new VttData(data, duration, recognizability, language);
+        LinkedHashMap<String, Double> Ktext = rake.getKeywordsFromText(String.join(" ", rakeText));
+        ArrayList<TextGroup> retText = new ArrayList<>();
+
+        Ktext.forEach((txt, i) -> {
+            ArrayList<String> temp = new ArrayList<String>();
+            Collections.addAll(temp, txt.split("\\s+"));
+            TextGroup group = new TextGroup(temp, i);
+            retText.add(group);
+        });
+
+        VttData ret = new VttData(data, duration, recognizability, language, retText);
         return ret;
     }
 

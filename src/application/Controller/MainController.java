@@ -67,12 +67,12 @@ public class MainController implements Initializable {
                 ta1.setText("Words Processed: " + pdf.getWordCount() + "\n" + "Time taken: " + PdfUtils.time);
                 ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
                 for (TextGroup t : pdf.getText()) {
-                    for (String s: t.getWords()) {
+                    for (String s : t.getWords()) {
                         list.add(new PieChart.Data(s, t.getWeight()));
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setPrefSize(200,200);
+                pieChart.setPrefSize(200, 200);
                 pieChart.setLayoutX(51);
                 pieChart.setLayoutY(33);
 
@@ -86,23 +86,23 @@ public class MainController implements Initializable {
                 ta1.setText("Words Processed: " + ppt.getWordCount() + "\n" + "Time taken: " + PptUtils.time);
                 ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
                 for (TextGroup t : ppt.getSlideTxtGroup()) {
-                    for (String s: t.getWords()) {
+                    for (String s : t.getWords()) {
                         list.add(new PieChart.Data(s, t.getWeight()));
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setPrefSize(200,200);
+                pieChart.setPrefSize(200, 200);
                 pieChart.setLayoutX(51);
                 pieChart.setLayoutY(33);
 
                 ObservableList<PieChart.Data> list2 = FXCollections.observableArrayList();
                 for (TextGroup t : ppt.getCommentTxtGroup()) {
-                    for (String s: t.getWords()) {
+                    for (String s : t.getWords()) {
                         list2.add(new PieChart.Data(s, t.getWeight()));
                     }
                 }
                 PieChart pieChart2 = new PieChart(list2);
-                pieChart2.setPrefSize(200,200);
+                pieChart2.setPrefSize(200, 200);
                 pieChart2.setLayoutX(51);
                 pieChart2.setLayoutY(266);
                 ap2.getChildren().addAll(pieChart, pieChart2);
@@ -113,29 +113,29 @@ public class MainController implements Initializable {
             try {
                 VttData vtt = VttUtils.decode(file);
                 int s = 0;
-                for (VttEntryData ved : vtt.getEntries()) {
+                for (VttEntryData ved : vtt.getTimeStampedEntries()) {
                     s += ved.getSubtitle().length();
                 }
                 ta1.setText("Words Processed: " + s + "\n" + "Time taken: " + vtt.getDuration());
             } catch (FileNotFoundException | ParseException e) {
                 e.printStackTrace();
             }
-        }else if (Controller.vtt) {
+        } else if (Controller.vtt) {
             //Mp4Data mp4 = Mp4Utils.decode(file);
             //ta1.setText("Words Processed: " + mp4.getWordCount() + "\n" + "Time taken: " + Mp4Utils.time);
-        }else {
+        } else {
             try {
                 DocxData docx = DocxUtils.decode(file);
                 ta1.setText("Words Processed: " + docx.getWordCount() + "\n" + "Time taken: " + DocxUtils.time);
 
                 ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
-                    for (TextGroup t : docx.getTextGroup()) {
-                    for (String s: t.getWords()) {
+                for (TextGroup t : docx.getTextGroup()) {
+                    for (String s : t.getWords()) {
                         list.add(new PieChart.Data(s, t.getWeight()));
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setPrefSize(200,200);
+                pieChart.setPrefSize(200, 200);
                 pieChart.setLayoutX(51);
                 pieChart.setLayoutY(33);
             } catch (IOException | ParserConfigurationException | SAXException e) {

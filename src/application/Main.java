@@ -35,6 +35,8 @@ public class Main extends Application {
         //}
         DocxData data = DocxUtils.decode(new File("data/word/sample1.docx"));
         System.out.println(data.getTextGroup());
+        VttData data1 = VttUtils.decode(new File("data/VTT/sample1.vtt"));
+        System.out.println(data1.getText());
         Parent root = stageLoader.load();
         primaryStage.setTitle("Hackathon Submission");
         primaryStage.setScene(new Scene(root, 600, 400));
