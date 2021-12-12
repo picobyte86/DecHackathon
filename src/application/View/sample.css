@@ -23,12 +23,3 @@
 .text-area .content{
     -fx-background-color: #129059;
 }
-
-.chart {
-    -fx-pref-width: 200;
-    -fx-pref-height: 200;
-    -fx-min-width: 200;
-    -fx-min-height: 200;
-    -fx-max-width: 200;
-    -fx-max-height: 200;
-}
