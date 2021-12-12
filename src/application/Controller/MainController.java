@@ -72,8 +72,9 @@ public class MainController implements Initializable {
                 }
                 PieChart pieChart = new PieChart(list);
                 pieChart.setMinSize(200, 200);
-                pieChart.setLayoutX(51);
+                pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
+                pieChart.setLegendVisible(false);
 
                 ap2.getChildren().addAll(pieChart);
             } catch (IOException e) {
@@ -91,8 +92,9 @@ public class MainController implements Initializable {
                 }
                 PieChart pieChart = new PieChart(list);
                 pieChart.setMinSize(200, 200);
-                pieChart.setLayoutX(51);
+                pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
+                pieChart.setLegendVisible(false);
 
                 ObservableList<PieChart.Data> list2 = FXCollections.observableArrayList();
                 for (TextGroup t : ppt.getCommentTxtGroup()) {
@@ -102,8 +104,9 @@ public class MainController implements Initializable {
                 }
                 PieChart pieChart2 = new PieChart(list2);
                 pieChart2.setMinSize(200, 200);
-                pieChart2.setLayoutX(51);
+                pieChart2.setLayoutX(0);
                 pieChart2.setLayoutY(266);
+                pieChart2.setLegendVisible(false);
                 ap2.getChildren().addAll(pieChart, pieChart2);
 
                 ArrayList<Result> result = PptUtils.search(ppt);
@@ -147,12 +150,13 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
+                pieChart.setLegendVisible(false);
                 pieChart.setMinSize(200, 200);
-                pieChart.setLayoutX(51);
+                pieChart.setLayoutX(0);
             } catch (FileNotFoundException | ParseException e) {
                 e.printStackTrace();
             }
-        } else if (Controller.vtt) {
+        } else if (Controller.mp4) {
             //Mp4Data mp4 = Mp4Utils.decode(file);
             //ta1.setText("Words Processed: " + mp4.getWordCount() + "\n" + "Time taken: " + Mp4Utils.time);
         } else {
@@ -168,8 +172,9 @@ public class MainController implements Initializable {
                 }
                 PieChart pieChart = new PieChart(list);
                 pieChart.setMinSize(200, 200);
-                pieChart.setLayoutX(51);
+                pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
+                pieChart.setLegendVisible(false);
             } catch (IOException | ParserConfigurationException | SAXException e) {
                 e.printStackTrace();
             }
