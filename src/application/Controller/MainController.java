@@ -112,11 +112,17 @@ public class MainController implements Initializable {
         } else if (Controller.vtt) {
             try {
                 VttData vtt = VttUtils.decode(file);
-                int s = 0;
-                for (VttEntryData ved : vtt.getTimeStampedEntries()) {
-                    s += ved.getSubtitle().length();
+
+                ta1.setText("Words Processed: " + vtt.getWordCount() + "\n" + "Time taken: " + vtt.getDuration());
+                ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
+                for (TextGroup t : vtt.getText()) {
+                    for (String s: t.getWords()) {
+                        list.add(new PieChart.Data(s, t.getWeight()));
+                    }
                 }
-                ta1.setText("Words Processed: " + s + "\n" + "Time taken: " + vtt.getDuration());
+                PieChart pieChart = new PieChart(list);
+                pieChart.setPrefSize(200,200);
+                pieChart.setLayoutX(51);
             } catch (FileNotFoundException | ParseException e) {
                 e.printStackTrace();
             }

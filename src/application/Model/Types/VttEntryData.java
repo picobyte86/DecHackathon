@@ -19,7 +19,7 @@ public class VttEntryData {
         this.uuid = uuid;
         this.t1 = t1;
         this.t2 = t2;
-        this.subtitle = subtitle;
+            this.subtitle = subtitle;
     }
 
     public double getConfidence() {

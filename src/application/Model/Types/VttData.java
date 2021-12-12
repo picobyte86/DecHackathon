@@ -74,6 +74,14 @@ public class VttData {
         this.language = language;
     }
 
+    public int getWordCount() {
+        int ret = 0;
+        for (TextGroup i : text) {
+            ret += i.getWords().size();
+        }
+        return ret;
+    }
+
     @Override
     public String toString() {
         return "VttData{" +
