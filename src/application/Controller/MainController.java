@@ -115,13 +115,13 @@ public class MainController implements Initializable {
 
                 ta1.setText("Words Processed: " + vtt.getWordCount() + "\n" + "Time taken: " + vtt.getDuration());
                 ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
-                for (TextGroup t : vtt.getText()) {
-                    for (String s: t.getWords()) {
+                for (TextGroup t : vtt.getTextEntries()) {
+                    for (String s : t.getWords()) {
                         list.add(new PieChart.Data(s, t.getWeight()));
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setPrefSize(200,200);
+                pieChart.setPrefSize(200, 200);
                 pieChart.setLayoutX(51);
             } catch (FileNotFoundException | ParseException e) {
                 e.printStackTrace();
