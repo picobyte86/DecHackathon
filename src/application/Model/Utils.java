@@ -5,7 +5,6 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import javax.imageio.ImageIO;
-import javax.swing.text.TabExpander;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -13,7 +12,6 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.zip.ZipEntry;
@@ -21,7 +19,6 @@ import java.util.zip.ZipFile;
 
 public class Utils {
     // Remove non word and newline chars
-    //todo filter numbers / better detection of words associated with number
     public static ArrayList<String> cleanText(String text) {
         String[] retArray = text.split("[^\\w-]");
         ArrayList<String> ret = new ArrayList<String>();
@@ -89,7 +86,6 @@ public class Utils {
                 }
             }
         }
-        ArrayList<TextGroup> ret1 = new ArrayList<TextGroup>();
         for (TextGroup i : ret) {
             ArrayList<String> temp = new ArrayList<String>();
             for (String j : i.getWords()) {

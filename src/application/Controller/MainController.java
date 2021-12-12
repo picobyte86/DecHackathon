@@ -19,7 +19,6 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;

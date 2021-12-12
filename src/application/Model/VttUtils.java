@@ -3,11 +3,9 @@ package application.Model;
 import application.Model.Types.*;
 import libraries.rake.com.linguistic.rake.Rake;
 import libraries.rake.com.linguistic.rake.RakeLanguages;
-import netscape.javascript.JSObject;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.http.HttpClient;

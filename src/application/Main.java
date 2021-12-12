@@ -39,6 +39,8 @@ public class Main extends Application {
         //data.save(new File(""), new File(""));
         //VttData data1 = VttUtils.decode(new File("data/VTT/sample1.vtt"));
         //System.out.println(data1.getText());
+        PptData a = PptUtils.decode(new File("data/ppt/sample1.pptx"));
+        System.out.println(a.getRawSlideTxt());
         Parent root = stageLoader.load();
         primaryStage.setTitle("Hackathon Submission");
         primaryStage.setScene(new Scene(root, 600, 400));

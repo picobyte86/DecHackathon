@@ -31,9 +31,11 @@ import static application.Model.WebScrap.searchEntry;
 
 public class PptUtils {
     public static long time;
+
     public PptUtils() {
 
     }
+
     // Extracts Text and Images from PPT, text processed using rake
     public static PptData decode(File file) throws IOException, ParserConfigurationException, SAXException {
         long start = System.currentTimeMillis();
@@ -88,6 +90,11 @@ public class PptUtils {
         }
         ArrayList<String> CslideTxt = cleanText(String.join(" ", slideTxt));
         ArrayList<String> CcommentTxt = cleanText(String.join(" ", commentTxt));
+        ArrayList<String> rawSlideTxt = new ArrayList<String>();
+        ArrayList<String> rawCommentTxt = new ArrayList<String>();
+        Collections.addAll(rawSlideTxt,String.join(" ", slideTxt).split(" "));
+        Collections.addAll(rawCommentTxt,String.join(" ", commentTxt).split(" "));
+
         LinkedHashMap<String, Double> KslideTxt = zRake.getKeywordsFromText(String.join(" ", CslideTxt));
         LinkedHashMap<String, Double> KcommentTxt = zRake.getKeywordsFromText(String.join(" ", CcommentTxt));
         ArrayList<TextGroup> retSlideTxt = new ArrayList<TextGroup>();
@@ -105,7 +112,7 @@ public class PptUtils {
             TextGroup group = new TextGroup(temp, i);
             retCommentTxt.add(group);
         });
-        PptData data = new PptData(bugFix(retSlideTxt), bugFix(retCommentTxt), images);
+        PptData data = new PptData(bugFix(retSlideTxt), bugFix(retCommentTxt), images, rawSlideTxt, rawCommentTxt);
         zFile.close();
         long end = System.currentTimeMillis();
         time = end - start;

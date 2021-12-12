@@ -9,14 +9,22 @@ import java.util.ArrayList;
 public class PptData {
     private int slideWordCount;
     private int commentWordCount;
+    private ArrayList<String> rawSlideTxt;
+    private ArrayList<String> rawCommentTxt;
     private ArrayList<TextGroup> slideTxt;
     private ArrayList<TextGroup> commentTxt;
     private ArrayList<BufferedImage> images;
 
-    public PptData(ArrayList<TextGroup> slideTxt, ArrayList<TextGroup> commentTxt, ArrayList<BufferedImage> images) {
+    public PptData(ArrayList<TextGroup> slideTxt,
+                   ArrayList<TextGroup> commentTxt,
+                   ArrayList<BufferedImage> images,
+                   ArrayList<String> rawSlideTxt,
+                   ArrayList<String> rawCommentTxt) {
         this.slideTxt = slideTxt;
         this.commentTxt = commentTxt;
         this.images = images;
+        this.rawCommentTxt = rawCommentTxt;
+        this.rawSlideTxt = rawSlideTxt;
     }
     public int getWordCount() {
         return getCommentWordCount() + getSlideWordCount();
@@ -27,6 +35,22 @@ public class PptData {
             ret += i.getWords().size();
         }
         return ret;
+    }
+
+    public ArrayList<String> getRawSlideTxt() {
+        return rawSlideTxt;
+    }
+
+    public void setRawSlideTxt(ArrayList<String> rawSlideTxt) {
+        this.rawSlideTxt = rawSlideTxt;
+    }
+
+    public ArrayList<String> getRawCommentTxt() {
+        return rawCommentTxt;
+    }
+
+    public void setRawCommentTxt(ArrayList<String> rawCommentTxt) {
+        this.rawCommentTxt = rawCommentTxt;
     }
 
     public int getCommentWordCount() {
