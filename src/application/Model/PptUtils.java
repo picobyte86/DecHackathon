@@ -51,11 +51,9 @@ public class PptUtils {
             Document zDoc;
             Element root;
             if (zEntry.isDirectory()) {
-                System.out.println("---------------------Directory: " + zEntry.getName());
             } else if (zPath[0].equals("ppt") && zPath[1].equals("media")) {
                 String ext = zPath[2].split("\\.")[1];
                 if (ext.matches("jpg|gif|png|bmp|tif|webp")) {
-                    System.out.println("&&&&&&" + ext);
                     BufferedImage zImage = getImage(zFile, zEntry);
                     images.add(zImage);
                 }
@@ -86,18 +84,10 @@ public class PptUtils {
                 zDoc = getDocument(zFile, zEntry);
                 root = zDoc.getDocumentElement();
                 NodeList defaultNodes = root.getElementsByTagName("Default");
-                for (int i = 0; i < defaultNodes.getLength(); i++) {
-                    System.out.println((((Element) (defaultNodes.item(i))).getAttribute("ContentType")));
-                }
-                System.out.println("---------------------Found ContentType XML");
-            } else {
-                System.out.println(zEntry.getName());
             }
         }
         ArrayList<String> CslideTxt = cleanText(String.join(" ", slideTxt));
         ArrayList<String> CcommentTxt = cleanText(String.join(" ", commentTxt));
-        System.out.println(CslideTxt);
-        System.out.println(CcommentTxt);
         LinkedHashMap<String, Double> KslideTxt = zRake.getKeywordsFromText(String.join(" ", CslideTxt));
         LinkedHashMap<String, Double> KcommentTxt = zRake.getKeywordsFromText(String.join(" ", CcommentTxt));
         ArrayList<TextGroup> retSlideTxt = new ArrayList<TextGroup>();

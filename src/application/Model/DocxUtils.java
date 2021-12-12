@@ -46,17 +46,17 @@ public class DocxUtils {
         ArrayList<String> text = new ArrayList<String>();
         ArrayList<BufferedImage> images = new ArrayList<BufferedImage>();
         Rake zRake = new Rake(RakeLanguages.ENGLISH);
+        int directories = 0;
         while (entries.hasMoreElements()) {
             ZipEntry zEntry = entries.nextElement();
             String[] zPath = zEntry.getName().split("/");
             Document zDoc;
             Element root;
             if (zEntry.isDirectory()) {
-                System.out.println("---------------------Directory: " + zEntry.getName());
+                directories += 1;
             } else if (zPath[0].equals("word") && zPath[1].equals("media")) {
                 String ext = zPath[2].split("\\.")[1];
                 if (ext.matches("jpg|gif|png|bmp|tif|webp")) {
-                    System.out.println("&&&&&&" + ext);
                     BufferedImage zImage = getImage(zFile, zEntry);
                     images.add(zImage);
                 }

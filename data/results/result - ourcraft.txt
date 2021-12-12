@@ -1,0 +1,24 @@
+{
+  "keyword" : "ourcraft",
+  "results" : [ {
+    "hyperlink" : "https://www.tcrecord.org/books/pdf.asp?ContentID=914",
+    "title" : "M Greene - Teachers College Record, 1984 - tcrecord.org",
+    "description" : "This article encourages teachers to think about how they teach. Teachers must pay attention to their actions, interventions, and their own life history. The vision and value of teaching are explored.To speak of craft is to presume a knowledge of a certain range of skills and …"
+  }, {
+    "hyperlink" : "https://journals.sagepub.com/doi/pdf/10.1177/1049732310364625",
+    "title" : "DL Morgan, JL Bottorff - Qualitative health research, 2010 - journals.sagepub.com",
+    "description" : "The original call for articles for this special issue solicited work about “both focus groups as a method as well as research that illustrates the use of focus groups,” and those two categories of articles are reflected in a division in the table of contents. Out of the nearly 50 …"
+  }, {
+    "hyperlink" : "https://academic.oup.com/isp/article-abstract/6/3/ii/1849931",
+    "title" : "N Smith, M Pace, D Lee - International Studies Perspectives, 2005 - academic.oup.com",
+    "description" : "In recent years, there has been growing recognition within international studies that big (normally synonymous with ''power'') is not always best. In contrast to the traditional IR focus on great powers, a number of authors have highlighted the need to ''take small states …"
+  }, {
+    "hyperlink" : "https://journals.sagepub.com/doi/pdf/10.1177/155545899800100104",
+    "title" : "DC Lortie - Journal of Cases in Educational Leadership, 1998 - journals.sagepub.com",
+    "description" : "• Persons in the disciplines seek to reach their goals through ever-increasing specialization in the selection of topics and problems they attack. If it is (mostly) misleading to say that scholars in the disciplines “learn more and more about less and less,” the statement does, at …"
+  }, {
+    "hyperlink" : "https://eric.ed.gov/?id=EJ606387",
+    "title" : "R Bomer - New Advocate, 1999 - ERIC",
+    "description" : "Describes how and why the author and his colleagues used reading conferences to assist upper-grade elementary students who struggle with reading. Describes teaching readers to choose books wisely; coaching them in thinking about the text while figuring out print; the …"
+  } ]
+}

@@ -20,11 +20,18 @@ public class PdfData {
             }
             return ret;
     }
-    public ArrayList<TextGroup> getText() {
+    public ArrayList<String> getText() {
+        ArrayList<String> ret = new ArrayList<String>();
+        for (int i = 0; i < text.size(); i++) {
+            ret.addAll(text.get(i).getWords());
+        }
+        return ret;
+    }
+    public ArrayList<TextGroup> getTextEntries() {
         return text;
     }
 
-    public void setText(ArrayList<TextGroup> text) {
+    public void setTextEntries(ArrayList<TextGroup> text) {
         this.text = text;
     }
 

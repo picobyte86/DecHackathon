@@ -29,13 +29,13 @@ public class Controller implements Initializable {
     @FXML
     void btnOnClick(ActionEvent event) throws IOException {
         FileChooser fileChooser = new FileChooser();
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Documents",  "*.ppt", "*.docx", "*.pdf","*.vtt", "*.mp4");
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Documents",  "*.ppt", "*.docx", "*.pdf","*.vtt", "*.pptx");
         fileChooser.getExtensionFilters().add(extFilter);
         fileChooser.setTitle("Open File");
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
         file = fileChooser.showOpenDialog(btn.getScene().getWindow());
         if (file != null) {
-            if (file.getName().matches(".+ppt")) {
+            if (file.getName().matches(".+ppt") || file.getName().matches(".+pptx")) {
                 ppt = true;
             } else if (file.getName().matches(".+pdf")) {
                 pdf = true;
@@ -55,7 +55,5 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Stage stage = (Stage) btn.getScene().getWindow();
-        stage.setResizable(false);
     }
 }
