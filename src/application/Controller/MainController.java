@@ -71,8 +71,6 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setMinSize(200, 200);
-                pieChart.setMaxSize(200, 200);
                 pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
                 pieChart.setLegendVisible(false);
@@ -121,8 +119,6 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setMinSize(200, 200);
-                pieChart.setMaxSize(200, 200);
                 pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
                 pieChart.setLegendVisible(false);
@@ -135,8 +131,6 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart2 = new PieChart(list2);
-                pieChart2.setMinSize(200, 200);
-                pieChart2.setMaxSize(200, 200);
                 pieChart2.setLayoutX(0);
                 pieChart2.setLayoutY(266);
                 pieChart2.setLegendVisible(false);
@@ -187,8 +181,6 @@ public class MainController implements Initializable {
                 PieChart pieChart = new PieChart(list);
                 pieChart.setLegendVisible(false);
                 pieChart.setLabelsVisible(true);
-                pieChart.setMinSize(200, 200);
-                pieChart.setMaxSize(200, 200);
                 pieChart.setLayoutX(0);
 
                 ArrayList<Result> result = VttUtils.search(vtt);
@@ -240,8 +232,6 @@ public class MainController implements Initializable {
                     }
                 }
                 PieChart pieChart = new PieChart(list);
-                pieChart.setMinSize(200, 200);
-                pieChart.setMaxSize(200, 200);
                 pieChart.setLayoutX(0);
                 pieChart.setLayoutY(33);
                 pieChart.setLegendVisible(false);
