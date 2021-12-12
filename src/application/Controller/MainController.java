@@ -79,7 +79,35 @@ public class MainController implements Initializable {
                 pieChart.setLabelsVisible(true);
 
                 ap2.getChildren().addAll(pieChart);
-            } catch (IOException e) {
+
+                ArrayList<Result> result = PdfUtils.search(pdf);
+                int count  = 0;
+                for (Result r: result) {
+                    Hyperlink h = new Hyperlink(r.getKeyword());
+                    h.setMinHeight(20);
+                    h.setLayoutX(20);
+                    h.setLayoutY(30 + 30 * count);
+                    count += 1;
+                    h.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent actionEvent) {
+                            Stage primaryStage = new Stage();
+                            ScrollPane sp3 = new ScrollPane();
+                            double count2 = 10;
+                            for (OnlineResource or :r.getResults()) {
+                                Label l = new Label(or.getTitle() + ": " + or.getHyperlink());
+                                sp3.getChildrenUnmodifiable().add(l);
+                                l.setLayoutY(count2);
+                                count2 = 30 + l.getLayoutY() + l.getPrefWidth();
+                            }
+                            Scene scene = new Scene(sp3);
+                            primaryStage.setScene(scene);
+                            primaryStage.show();
+                        }
+                    });
+                    ap1.getChildren().add(h);
+                }
+            } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
             }
         } else if (Controller.ppt) {
@@ -119,8 +147,8 @@ public class MainController implements Initializable {
                 int count  = 0;
                 for (Result r: result) {
                     Hyperlink h = new Hyperlink(r.getKeyword());
-                    h.setMinHeight(15);
-                    h.setLayoutX(10);
+                    h.setMinHeight(20);
+                    h.setLayoutX(20);
                     h.setLayoutY(30 + 30 * count);
                     count += 1;
                     h.setOnAction(new EventHandler<ActionEvent>() {
@@ -162,7 +190,39 @@ public class MainController implements Initializable {
                 pieChart.setMinSize(200, 200);
                 pieChart.setMaxSize(200, 200);
                 pieChart.setLayoutX(0);
+
+                ArrayList<Result> result = VttUtils.search(vtt);
+                int count  = 0;
+                for (Result r: result) {
+                    Hyperlink h = new Hyperlink(r.getKeyword());
+                    h.setMinHeight(20);
+                    h.setLayoutX(20);
+                    h.setLayoutY(30 + 30 * count);
+                    count += 1;
+                    h.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent actionEvent) {
+                            Stage primaryStage = new Stage();
+                            ScrollPane sp3 = new ScrollPane();
+                            double count2 = 10;
+                            for (OnlineResource or :r.getResults()) {
+                                Label l = new Label(or.getTitle() + ": " + or.getHyperlink());
+                                sp3.getChildrenUnmodifiable().add(l);
+                                l.setLayoutY(count2);
+                                count2 = 30 + l.getLayoutY() + l.getPrefWidth();
+                            }
+                            Scene scene = new Scene(sp3);
+                            primaryStage.setScene(scene);
+                            primaryStage.show();
+                        }
+                    });
+                    ap1.getChildren().add(h);
+                }
             } catch (FileNotFoundException | ParseException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         } else if (Controller.mp4) {
@@ -186,7 +246,35 @@ public class MainController implements Initializable {
                 pieChart.setLayoutY(33);
                 pieChart.setLegendVisible(false);
                 pieChart.setLabelsVisible(true);
-            } catch (IOException | ParserConfigurationException | SAXException e) {
+
+                ArrayList<Result> result = DocxUtils.search(docx);
+                int count  = 0;
+                for (Result r: result) {
+                    Hyperlink h = new Hyperlink(r.getKeyword());
+                    h.setMinHeight(20);
+                    h.setLayoutX(20);
+                    h.setLayoutY(30 + 30 * count);
+                    count += 1;
+                    h.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent actionEvent) {
+                            Stage primaryStage = new Stage();
+                            ScrollPane sp3 = new ScrollPane();
+                            double count2 = 10;
+                            for (OnlineResource or :r.getResults()) {
+                                Label l = new Label(or.getTitle() + ": " + or.getHyperlink());
+                                sp3.getChildrenUnmodifiable().add(l);
+                                l.setLayoutY(count2);
+                                count2 = 30 + l.getLayoutY() + l.getPrefWidth();
+                            }
+                            Scene scene = new Scene(sp3);
+                            primaryStage.setScene(scene);
+                            primaryStage.show();
+                        }
+                    });
+                    ap1.getChildren().add(h);
+                }
+            } catch (IOException | ParserConfigurationException | SAXException | InterruptedException e) {
                 e.printStackTrace();
             }
         }
